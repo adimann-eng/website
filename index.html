@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIPERPUS UNUGIRI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<section id="login">
+  <div class="login-left">
+    <div class="brand">
+      <div class="brand-icon">📚</div>
+      <div><div class="brand-name">SIPERPUS</div><div class="brand-sub">Sistem Informasi Perpustakaan</div></div>
+    </div>
+    <h1>Peminjaman &amp; pengembalian buku, lebih cepat dan rapi.</h1>
+    <p>Kelola data buku, anggota, transaksi, dan laporan dalam satu aplikasi — tanpa buku catatan manual.</p>
+    <ul>
+      <li>✓ Cek ketersediaan buku secara cepat</li>
+      <li>✓ Catat transaksi tanpa salah hitung</li>
+      <li>✓ Laporan siap cetak</li>
+    </ul>
+  </div>
+  <div class="login-right">
+    <form id="loginForm">
+      <h2>Masuk</h2>
+      <p class="muted">Gunakan akun petugas perpustakaan</p>
+      <label>Username</label>
+      <input id="lUser" type="text" placeholder="petugas" autocomplete="username">
+      <label>Password</label>
+      <div class="password-wrap">
+        <input id="lPass" type="password" placeholder="Masukkan password" autocomplete="current-password">
+        <button type="button" class="password-toggle" id="togglePass" aria-label="Tampilkan password">👁</button>
+      </div>
+      <div id="loginErr" class="err"></div>
+      <button class="btn primary block" type="submit">Masuk ke Sistem</button>
+      <p class="center muted small">Perpustakaan UNUGIRI · Bojonegoro</p>
+      <p class="center muted small">Demo: <b>petugas01</b> / <b>admin123</b></p>
+      <button type="button" class="forgot-toggle" id="forgotToggle" aria-expanded="false">Lupa username atau password?</button>
+      <div id="forgotPanel" class="forgot-panel" aria-hidden="true">
+        <b>Bantuan login akun demo</b>
+        <p>Gunakan kembali akun bawaan berikut:</p>
+        <div class="credential-row"><span>Username</span><b>petugas01</b></div>
+        <div class="credential-row"><span>Password</span><b>admin123</b></div>
+        <p class="small muted">Jika password pernah diubah pada kode, periksa bagian LOGIN / SESSION di file app.js.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- APP -->
+<div id="app" class="hidden">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">📚</div>
+      <div><div class="brand-name">SIPERPUS</div><div class="brand-sub">UNUGIRI</div></div>
+    </div>
+    <nav>
+      <a data-view="dashboard">🏠 Dashboard</a>
+      <a data-view="buku">📘 Data Buku</a>
+      <a data-view="anggota">👥 Data Anggota</a>
+      <a data-view="peminjaman">📤 Peminjaman</a>
+      <a data-view="pengembalian">📥 Pengembalian</a>
+      <a data-view="laporan">📊 Laporan</a>
+    </nav>
+    <div class="user" id="logoutBtn" title="Klik untuk keluar">
+      <div class="avatar">AN</div>
+      <div><b>Adi Nur Rahman</b><br><span>Petugas · klik untuk keluar</span></div>
+    </div>
+  </aside>
+  <main id="view"></main>
+</div>
+
+<div id="modal" class="modal hidden"><div class="modal-box" id="modalBox"></div></div>
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
